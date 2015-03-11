@@ -36,9 +36,41 @@
 //				display: none
 // ## fonts 
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
-// =book
-// 	font-family: "book", Arial, sans-serif 
++font(PFEncoreSansPro-Black, PFEncoreSansPro-Black)  
+=black
+	font-family: "PFEncoreSansPro-Black", Arial, sans-serif
+	 
++font(PFEncoreSansPro-UBlack, PFEncoreSansPro-UBlack)  
+=ublack
+	font-family: "PFEncoreSansPro-UBlack", Arial, sans-serif 
+	
++font(PFEncoreSansPro-Bold, PFEncoreSansPro-Bold)  
+=bold
+	font-family: "PFEncoreSansPro-Bold", Arial, sans-serif 
+
++font(PFEncoreSansPro-Medium, PFEncoreSansPro-Medium)  
+=medium
+	font-family: "PFEncoreSansPro-Medium", Arial, sans-serif 
+
++font(PFEncoreSansPro-Light, PFEncoreSansPro-Light)  
+=light
+	font-family: "PFEncoreSansPro-Light", Arial, sans-serif 
+
++font(PFEncoreSansPro-Thin, PFEncoreSansPro-Thin)  
+=thin
+	font-family: "PFEncoreSansPro-Thin", Arial, sans-serif 
+
++font(PFEncoreSansPro-UThin, PFEncoreSansPro-UThin)  
+=uthin
+	font-family: "PFEncoreSansPro-UThin", Arial, sans-serif 
+
++font(PFEncoreSansPro-XThin, PFEncoreSansPro-XThin)  
+=xthin
+	font-family: "PFEncoreSansPro-XThin", Arial, sans-serif 
+
++font(PFEncoreSansPro-XThinItalic, PFEncoreSansPro-XThinItalic)  
+=xthinIt
+	font-family: "PFEncoreSansPro-XThinItalic", Arial, sans-serif 
 // insert pics into css
 // div
 // 	+pic("blabla.png")
@@ -48,19 +80,169 @@
 // 	+jpg(bla)
 
 
+$yellow: #f8de2e
+$gray: #e9e9e9
+$black: #191919
+$dark: #222
+$text: #444
+
+html
+	font-size: 100%
+	+r(768)
+		font-size: 80%
+	+r(640)
+		font-size: 62.5%
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
+	font-size: 1.4rem 
 	line-height: 1.4
+	min-width: 320px
+	+black
+.l-center
+	padding: 0 1.8rem 
+// common blocks  
 
-
-// common blocks      
-
-
-
-
-
-
+.header
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	padding: 1.5rem 0
+	background: $dark  
+	+gpu
+.lang
+	position: relative
+	float: right
+	margin-right: 70px
+	text-transform: uppercase
+	&__active 
+		display: block
+		position: relative
+		padding: 1rem 2rem 1rem 1rem
+		color: #fff 
+		&:after	
+			content: ""
+			position: absolute
+			top: 1.7rem
+			right: 0
+			+svg(lang-caret,10,5) 
+	&__list
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+.nav-toggle
+	float: right
+	height: 4rem
+	width: 4rem
+	background: $black
+	
+	&:hover
+		i
+			&:before
+				+transform(translateY(-.2rem))
+			&:after
+				+transform(translateY(.2rem))
+	i
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		height: .2rem
+		width: 50%
+		background: #fff 
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			width: 100%
+			height: .2rem
+			background: #fff
+			+tr(transform .3s)
+		&:before
+			top: -.5rem
+		&:after
+			bottom: -.5rem
+		
+// common blocks   
+.section
+	&_yellow
+		background: $yellow 
+.full-height
+	height: 100vh
+.v-center
+	+vertical
+	padding: 2rem 0 
+	> div
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+.main-event
+	color: $dark 
+	text-align: left
+	.btn
+		margin-top: 33px
+	&__title
+		display: inline
+		font-size: 7.7rem
+		+ublack
+		line-height: 0.8
+		font-weight: normal
+		text-transform: uppercase
+		word-break: break-all
+		span
+			+uthin
+			font-style: normal
+		.main-event__date
+			display: inline
+			+xthin
+			font-size: 2.1rem
+			+r(768)
+				font-size: 2.5rem
+		
+.btn
+	display: inline-block
+	position: relative
+	z-index: 2
+	background: none
+	border: 4px solid #fff
+	padding: .7rem 3rem 
+	color: #fff
+	font-size: 1.3rem
+	+black 
+	text-align: center
+	text-decoration: none
+	text-transform: uppercase
+	+tr(color .3s)
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 0 
+		z-index: -1
+		+tr(height .3s)
+		background: #fff 
+	&:hover
+		color: #000
+		&:before
+			height: 100%
+	&_dark
+		color: #000
+		border-color: #000
+		&:hover
+			color: #fff 
+		&:before	
+			background: #000 
+	&_liquid
+		display: block
+		width: 100%
+	&_height
+		padding: .8rem 2.5rem 
+		border-width: 6px 
+		
+.main-event
 
 
 
