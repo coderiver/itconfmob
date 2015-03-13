@@ -1,6 +1,11 @@
 head.ready(function() {
-	$(".js-drop-toggle").on("click", function(){
+	$(document).click(function(){
+		$(".js-drop-list").slideUp(200);
+		$(".js-drop").removeClass("is-active");
+	});
+	$(".js-drop-toggle").on("click", function(event){
 		$(this).parents(".js-drop").toggleClass("is-active").find(".js-drop-list").slideToggle(200);
+		event.stopPropagation();
 	});
 	$(".js-nav-toggle").on("click", function(){
 		$("html").toggleClass("has-open-nav");
@@ -43,6 +48,11 @@ head.ready(function() {
 	$(".js-slider-next").on("click", function(){
 		$(this).parent().prev().slick('slickNext');
 		return false;
+	});
+
+	$(".js-select select").on("change", function(){
+		var val = $(this).val();
+		$(this).parents(".js-select").find(".js-select-active").text(val);
 	});
 
 });

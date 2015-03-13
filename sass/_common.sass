@@ -116,6 +116,8 @@ a
 		display: inline-block
 		vertical-align: middle
 		width: 100%
+.wrapper
+	overflow: hidden
 // common blocks  
 
 .header
@@ -268,6 +270,8 @@ a
 		padding: 0
 	&_padding-top
 		padding: 8rem 0 0
+	&_partners
+		padding-bottom: 5rem
 .btn
 	display: inline-block
 	position: relative
@@ -332,6 +336,14 @@ a
 	img
 		display: block
 		margin: 0 auto .2rem
+.title-small
+	margin: 0 0 .8rem
+	font-size: 11px
+	+black
+	text-transform: uppercase
+	text-align: center
+	&_gray
+		color: #999 
 .select
 	margin-bottom: 1.5rem
 	text-align: center
@@ -385,13 +397,6 @@ a
 	&_no-padding
 		background-color: transparent
 		padding: 0
-	&_dark
-		color: #000
-		blockquote
-			color: #716304
-		li
-			&:before
-				background: #000 
 	img
 		margin-bottom: 1.4rem
 		display: block
@@ -422,7 +427,14 @@ a
 				height: .4rem
 				border-radius: 50%
 				background: $yellow   
-
+.post_dark
+	color: #000
+	blockquote
+		color: #716304
+	ul
+		li
+			&:before
+				background: #000 
 .profile
 	display: block
 	margin: 0 auto 
