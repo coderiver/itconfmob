@@ -5,6 +5,7 @@
 	<title>Template</title>
 	<meta name="viewport" content="initial-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" media="all" href="css/style.css" >
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
@@ -12,7 +13,7 @@
 <!-- BEGIN  out-->
 <div class="out">
 	<!-- BEGIN header -->
-	<header class="header">
+	<header class="header header_no-bg">
 		<div class="l-center">
 			<a href="#" class="btn">купить билет</a>
 			<div class="lang js-drop">
@@ -40,7 +41,7 @@
 		</ul>
 	</nav>
 	<!-- END nav -->
-	<section class="section section_yellow section_no-padding">
+	<section class="section section_yellow section_no-padding js-full-section">
 		<div class="l-center">
 			<div class="v-center full-height">
 				<div class="v-center__in main-event">
@@ -96,12 +97,14 @@
 			<div class="select js-select">
 				<div class="select__in">
 					<span class="select__active js-select-active">front-end developers</span>
-					<select class="js-select-list">
-						<option value="front-end developers">front-end developers </option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
+					<ul class="select__drop js-select-drop">
+						<li><a href="#">для кого?</a></li>
+						<li><a href="#">front-end developers</a></li>
+						<li><a href="#">back-end developers</a></li>
+						<li><a href="#">Testers </a></li>
+						<li><a href="#">web designers</a></li>
+						<li><a href="#">Startapers</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -125,12 +128,14 @@
 			<div class="select select_white js-select">
 				<div class="select__in">
 					<span class="select__active js-select-active">все спикеры</span>
-					<select class="js-select-list">
-						<option value="все спикеры">все спикеры  </option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
+					<ul class="select__drop js-select-drop">
+						<li><a href="#">все спикеры  </a></li>
+						<li><a href="#">Front-end  </a></li>
+						<li><a href="#">Back-end </a></li>
+						<li><a href="#">QA</a></li>
+						<li><a href="#">Web design</a></li>
+						<li><a href="#">показать всех</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -196,16 +201,19 @@
 			<div class="title">Программа</div>
 			<div class="select select_width js-select">
 				<div class="select__in">
-					<span class="select__active">
-						<strong>12.04-18.04</strong> 
-						<span class="js-select-active">вся программа</span>
+					<span class="select__active js-select-active">
+						<strong>12.04-18.04</strong> вся программа
 					</span>
-					<select class="js-select-list">
-						<option value="12.04-18.04 вся программа">вся программа  </option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
+					<ul class="select__drop js-select-drop">
+						<li><a href="#"><strong>12.04-18.04</strong> вся программа</a></li>
+						<li><a href="#"><strong>12.04 / вс</strong> открытие</a></li>
+						<li><a href="#"><strong>13.04 / пн</strong>  front-end day  </a></li>
+						<li><a href="#"><strong>14.04 / вт</strong> back-end day</a></li>
+						<li><a href="#"><strong>15.04 / ср</strong> qa day  </a></li>
+						<li><a href="#"><strong>16.04 / чт</strong> web design day  </a></li>
+						<li><a href="#"><strong>17.04 / пт</strong> Soft skills</a></li>
+						<li><a href="#"><strong>18.04 / сб</strong> Afterparty</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -217,7 +225,7 @@
 						<li>василий маланка</li>
 					</ul>
 					<div class="card__info">Build tons of multi-device JavaScript applications, design patterns & high performance UI</div>
-					<a href="#" class="btn-add"></a>
+					<a href="#" class="btn-add js-popup-toggle" data-popup="js-popup-name"></a>
 				</div>
 			</div>
 			<div>
@@ -227,7 +235,7 @@
 						<li>василий маланка</li>
 					</ul>
 					<div class="card__info">Build tons of multi-device JavaScript applications, design patterns & high performance UI</div>
-					<a href="#" class="btn-add"></a>
+					<a href="#" class="btn-add js-popup-toggle" data-popup="js-popup-name"></a>
 				</div>
 			</div>
 			<div>
@@ -237,7 +245,7 @@
 						<li>василий маланка</li>
 					</ul>
 					<div class="card__info">Build tons of multi-device JavaScript applications, design patterns & high performance UI</div>
-					<a href="#" class="btn-add"></a>
+					<a href="#" class="btn-add js-popup-toggle" data-popup="js-popup-name"></a>
 				</div>
 			</div>
 			<div>
@@ -247,7 +255,7 @@
 						<li>василий маланка</li>
 					</ul>
 					<div class="card__info">Build tons of multi-device JavaScript applications, design patterns & high performance UI</div>
-					<a href="#" class="btn-add"></a>
+					<a href="#" class="btn-add js-popup-toggle" data-popup="js-popup-name"></a>
 				</div>
 			</div>
 			<div>
@@ -257,7 +265,7 @@
 						<li>василий маланка</li>
 					</ul>
 					<div class="card__info">Build tons of multi-device JavaScript applications, design patterns & high performance UI</div>
-					<a href="#" class="btn-add"></a>
+					<a href="#" class="btn-add js-popup-toggle" data-popup="js-popup-name"></a>
 				</div>
 			</div>
 		</div>
@@ -463,6 +471,28 @@
 			Мы на связи: <a href="mailto:box@uwcua.com">box@uwcua.com</a>
 		</div>
 	</footer>
+
+	<div class="popup js-popup js-popup-name">
+		<div class="popup__in">
+			<div class="popup__title">Build tons of multi-device JavaScript applications, design patterns & high performance UI
+			</div>
+			<p>И вот я беру хрустальный шар и вангую, что уже совсем скоро все изменится. <br>
+			Мы вступаем в эпоху Дилетантов. Клиенты будут решать большинство веб-задач без привлечения специально обученных людей (нас).
+			<ul>
+				<li>search engine marketing (SEM)</p></li>
+				<li>display advertising</li>
+				<li>remarketing</li>
+				<li>E-mail marketing</li>
+				<li>Google Analytics</li>
+			</ul>
+			<p>Остальное — на лекции. До встречи.</p>
+			<h2>Олександр Трегуб</h2>
+			<p>Арт-директор дизайн-студии Akademia, сооснователь курса веб-дизайна в Школе визуальных технологий, автор "Метода казанка".</p>
+
+			<p>Язык выступления: русский</p>
+		</div>
+		<button type="button" class="popup__close js-popup-close"><i class="icon-close"></i></button>
+	</div>
 </div>
 <!-- END out-->
 <!-- load scripts -->

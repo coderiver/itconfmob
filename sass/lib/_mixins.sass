@@ -94,15 +94,13 @@
 
 // TRANSITION
 =transition($what)
-	-moz-transition: $what
-	-o-transition: $what
 	-webkit-transition: $what
-	-ms-transition: $what
 	transition: $what
 
 =tr($what)
-	+transition($what)
-
+	-moz-transition: $what
+	-webkit-transition: $what
+	transition: $what
 =hide-text
 	font: 0/0 a
 	text-shadow: none

@@ -2,15 +2,34 @@ head.ready(function() {
 	$(document).click(function(){
 		$(".js-drop-list").slideUp(200);
 		$(".js-drop").removeClass("is-active");
+		$(".js-select").removeClass("is-active");
+		$(".js-select-drop").fadeOut(300);
 	});
+
+	var sectionHeight = $(".js-full-section").outerHeight();
+
+	function scrollSection (argument) {
+		var heightTarget = sectionHeight - $(".header").outerHeight();
+		if ($("body").scrollTop() > heightTarget) {
+			$(".header").removeClass("header_no-bg");
+		}
+		else {
+			$(".header").addClass("header_no-bg");
+		}
+	}
+	scrollSection();
+	$(window).scroll(function () {
+		scrollSection();
+	});
+
 	$(".js-drop-toggle").on("click", function(event){
 		$(this).parents(".js-drop").toggleClass("is-active").find(".js-drop-list").slideToggle(200);
 		event.stopPropagation();
 	});
 	$(".js-nav-toggle").on("click", function(){
-		$("html").toggleClass("has-open-nav");
+		$("html").toggleClass("no-scroll");
 		$(this).toggleClass("is-active");
-		$(".js-nav").toggleClass("is-active");
+		$(".js-nav").toggleClass("is-visible");
 	});
 
 	$(".js-slider").slick({
@@ -50,9 +69,30 @@ head.ready(function() {
 		return false;
 	});
 
-	$(".js-select select").on("change", function(){
-		var val = $(this).val();
-		$(this).parents(".js-select").find(".js-select-active").text(val);
+	$(".js-select").on("click", function(event){
+		$(this).toggleClass("is-active").find(".js-select-drop").fadeToggle(300);
+		event.stopPropagation();
+	});
+
+	$(".js-select-drop a").on("click", function(event){
+		var html = $(this).html();
+		$(this).parents(".js-select").removeClass("is-active").find(".js-select-drop").fadeToggle(300)
+		$(this).parents(".js-select").find(".js-select-active").html(html);
+		event.stopPropagation();
+		return false;
+	});
+
+	$(".js-popup-toggle").on("click", function(event){
+		var popup = $(this).attr("data-popup");
+		$("."+popup).addClass("is-visible");
+		$("html").addClass("no-scroll");
+		return false;
+	});
+
+	$(".js-popup-close").on("click", function(event){
+		$(".js-popup").removeClass("is-visible");
+		$("html").removeClass("no-scroll");
+		return false;
 	});
 
 });
