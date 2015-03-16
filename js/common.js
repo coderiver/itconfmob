@@ -41,8 +41,8 @@ head.ready(function() {
 		arrows: true,
 		speed: 300,
 		adaptiveHeight: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
+		//autoplay: true,
+		//autoplaySpeed: 5000,
 		responsive: [
 		    {
 		      breakpoint: 1024,
@@ -76,22 +76,30 @@ head.ready(function() {
 
 	$(".js-select-drop a").on("click", function(event){
 		var html = $(this).html();
+		var index = $(this).parent().index();
 		$(this).parents(".js-select").removeClass("is-active").find(".js-select-drop").fadeToggle(300)
 		$(this).parents(".js-select").find(".js-select-active").html(html);
+		$(this).parents(".js-select").next().children().addClass("is-hidden");
+		$(this).parents(".js-select").next().children().eq(index).removeClass("is-hidden");
 		event.stopPropagation();
 		return false;
 	});
 
-	$(".js-popup-toggle").on("click", function(event){
+	$("body").on("click",".js-popup-toggle", function(){
 		var popup = $(this).attr("data-popup");
 		$("."+popup).addClass("is-visible");
 		$("html").addClass("no-scroll");
 		return false;
 	});
 
-	$(".js-popup-close").on("click", function(event){
+	$(".js-popup-close").on("click", function(){
 		$(".js-popup").removeClass("is-visible");
 		$("html").removeClass("no-scroll");
+		return false;
+	});
+
+	$("body").on("click",".js-remove-slider", function(){
+		$(this).parent().hide().prev().slick("unslick");
 		return false;
 	});
 

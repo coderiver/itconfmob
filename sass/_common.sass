@@ -130,6 +130,8 @@ a
 		width: 100%
 .wrapper
 	overflow: hidden
+.is-hidden
+	display: none
 // common blocks  
 
 .header
@@ -501,7 +503,7 @@ a
 		li
 			&:before
 				background: #000 
-.profile
+.speaker
 	display: block
 	margin: 0 auto 
 	width: 16.6rem
@@ -566,7 +568,13 @@ a
 	background: $gray 
 	will-change: transform
 	+tr(transform .3s)
+	color: $dark
 	+transform(translateY(-150%))
+	&_dark
+		background: $dark
+		color: #fff
+		.popup__close
+			background: #000   
 	&.is-visible
 		+transform(translateY(0))
 	&__title
@@ -588,7 +596,6 @@ a
 	&__in
 		padding: 1.4rem 1.8rem 1.4rem
 		font-size: 1.6rem
-		color: $dark
 		+thin 
 		h2
 			font-weight: normal
