@@ -24,7 +24,7 @@ head.ready(function() {
 		$(this).parents(".js-drop").toggleClass("is-active").find(".js-drop-list").slideToggle(200);
 		event.stopPropagation();
 	});
-	$(".js-nav-toggle").on("click", function(){
+	$(".js-nav-toggle").on("touchstart", function(){
 		$("html").toggleClass("no-scroll");
 		$(this).toggleClass("is-active");
 		$(".js-nav").toggleClass("is-visible");
@@ -96,7 +96,7 @@ head.ready(function() {
 		return false;
 	});
 
-	$("body").on("click",".js-remove-slider", function(){
+	$("body").on("touchstart",".js-remove-slider", function(){
 		$(this).parent().hide().prev().slick("unslick");
 		return false;
 	});
