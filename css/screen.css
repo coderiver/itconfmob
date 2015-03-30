@@ -69,11 +69,11 @@ a { text-decoration: none; }
 @media only screen and (max-width: 360px) { .lang { margin-right: 4.8rem; } }
 .lang.is-active .lang__active { background: rgba(25, 25, 25, 0.8); }
 .lang.is-active .lang__active:after { -ms-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); transform: rotate(-180deg); color: #d9d9d9; }
-.lang__active { display: block; position: relative; padding: 0 2.7rem 0 1rem; height: 4rem; line-height: 4rem; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+.lang__active { display: block; position: relative; padding: 0 2.7rem 0 1rem; height: 4rem; line-height: 4rem; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -moz-transition: background 0.2s; -webkit-transition: background 0.2s; transition: background 0.2s; }
 .lang__active:after { content: ""; position: absolute; top: 1.7rem; right: 7px; font-size: 8px; will-change: transform; -moz-transition: -moz-transform 0.3s, color 0.3s; -o-transition: -o-transform 0.3s, color 0.3s; -webkit-transition: -webkit-transform 0.3s, color 0.3s; transition: transform 0.3s, color 0.3s; font-family: "icomoon"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 @media only screen and (max-width: 960px) { .lang__active:after { font-size: 6px; } }
 @media only screen and (max-width: 768px) { .lang__active:after { font-size: 5px; } }
-.lang__list { position: absolute; top: 100%; left: 0; display: none; padding-bottom: 0.5rem; width: 100%; background: rgba(25, 25, 25, 0.8); font-size: 1.4rem; color: #999; -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.lang__list { position: absolute; top: 100%; left: 0; display: none; padding-bottom: 0.5rem; width: 100%; background: rgba(25, 25, 25, 0.8); font-size: 1.4rem; color: #999; will-change: opacity; }
 .lang__list a { display: block; padding: 0.5rem 1rem; color: #999; }
 .lang__list a:hover { color: #fff; }
 

@@ -1,6 +1,6 @@
 head.ready(function() {
 	$(document).click(function(){
-		$(".js-drop-list").slideUp(200);
+		$(".js-drop-list").fadeOut(200);
 		$(".js-drop").removeClass("is-active");
 		$(".js-select").removeClass("is-active");
 		$(".js-select-drop").fadeOut(300);
@@ -21,7 +21,7 @@ head.ready(function() {
 	});
 
 	$(".js-drop-toggle").on("click", function(event){
-		$(this).parents(".js-drop").toggleClass("is-active").find(".js-drop-list").slideToggle(200);
+		$(this).parents(".js-drop").toggleClass("is-active").find(".js-drop-list").fadeToggle(200);
 		event.stopPropagation();
 	});
 	$(".js-nav-toggle").on("touchstart", function(){
@@ -106,7 +106,34 @@ head.ready(function() {
 			$(this).addClass("is-active").parent().prev().slick("unslick");
 		}
 		else {
-			$(this).removeClass("is-active").parent().prev().slick();
+			$(this).removeClass("is-active").parent().prev().slick({
+				fade: false,
+				infinite: true,
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				dots: false,
+				arrows: true,
+				speed: 300,
+				adaptiveHeight: true,
+				//autoplay: true,
+				//autoplaySpeed: 5000,
+				responsive: [
+				    {
+				      breakpoint: 1024,
+				      settings: {
+				        slidesToShow: 2,
+				        slidesToScroll: 2,
+				      }
+				    },
+				    {
+				      breakpoint: 960,
+				      settings: {
+				        slidesToShow: 1,
+				        slidesToScroll: 1,
+				      }
+				    }
+				]
+			});
 		}
 		
 		return false;
