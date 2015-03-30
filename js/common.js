@@ -79,7 +79,7 @@ head.ready(function() {
 		$(this).parents(".js-select").find(".js-select-active").html(html);
 		$(this).parents(".js-select").next().children().addClass("is-hidden");
 		$(this).parents(".js-select").next().children().eq(index).removeClass("is-hidden");
-		$(this).parents(".js-select").next().children().eq(index).find(".js-slider").slick("slickGoTo", 0);
+		$(this).parents(".js-select").next().children().eq(index).find(".js-slider").slick("reinit");
 		event.stopPropagation();
 		return false;
 	});
